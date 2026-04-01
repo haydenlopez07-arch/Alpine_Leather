@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Monarch Leather Works</title>
+  <title>Alpine Leather</title>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display&display=swap" rel="stylesheet">
@@ -11,40 +11,107 @@
   <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
+<!-- HEADER -->
 <header>
-  <h1>Monarch Leather Works</h1>
+  <h1>Alpine Leather</h1>
+  <p>Handcrafted Leather Goods Built to Last</p>
 </header>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="shop.html">Shop</a>
-  <a href="custom.html">Custom Orders</a>
+<!-- NAVIGATION -->
+<nav class="navbar">
+  <ul class="nav-links">
+
+    <li><a href="index.html">Home</a></li>
+
+    <li class="dropdown">
+      <a href="support/index.html">Support</a>
+      <ul class="dropdown-menu">
+        <li><a href="support/faqs.html">FAQs</a></li>
+        <li><a href="support/privacy.html">Privacy</a></li>
+        <li><a href="support/terms.html">Terms</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <a href="service/index.html">Service</a>
+      <ul class="dropdown-menu">
+        <li><a href="service/classes.html">Classes</a></li>
+        <li><a href="service/leather.html">Leather Work</a></li>
+        <li><a href="service/bags.html">Bags & Cases</a></li>
+        <li><a href="service/wallets.html">Wallets & Purses</a></li>
+        <li><a href="service/other.html">Other</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <a href="about/index.html">About</a>
+      <ul class="dropdown-menu">
+        <li><a href="about/contact.html">Contact Us</a></li>
+        <li><a href="about/portfolio.html">Portfolio</a></li>
+        <li><a href="about/updates.html">Farm Updates</a></li>
+        <li><a href="about/farm-products.html">Other Farm Products</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <a href="account/index.html">Account</a>
+      <ul class="dropdown-menu">
+        <li><a href="account/login.html">Log In</a></li>
+        <li><a href="account/signup.html">Sign Up</a></li>
+        <li><a href="account/profile.html">Profile</a></li>
+      </ul>
+    </li>
+
+  </ul>
 </nav>
 
-<main>
-  <section class="hero">
-    <h2>Crafted for Life</h2>
-    <button class="btn btn-primary">Book Now</button>
-    <button class="btn btn-secondary">Shop</button>
-  </section>
+<!-- HERO SECTION -->
+<section class="hero">
+  <h2>Premium Handmade Leather</h2>
+  <p>Crafted with care. Designed for durability. Built for everyday life.</p>
+  <a href="service/leather.html" class="btn btn-primary">Explore Products</a>
+  <a href="about/contact.html" class="btn btn-secondary">Contact Us</a>
+</section>
 
-  <div class="grid">
-    <div class="image-card">
-      <img src="https://images.unsplash.com/photo-1600180758890-6b94519a8ba6">
-    </div>
-    <div class="image-card">
-      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
-    </div>
-    <div class="image-card">
-      <img src="images/foggy-mountains.JPEG">
-    </div>
+<!-- FEATURED CATEGORIES -->
+<section class="grid">
+
+  <div class="card">
+    <img src="images/bag.webp" alt="Leather Bags">
+    <h3>Bags & Cases</h3>
+    <a href="service/bags.html" class="btn btn-primary">View</a>
   </div>
-</main>
 
+  <div class="card">
+    <img src="images/wallet.webp" alt="Wallets">
+    <h3>Wallets & Purses</h3>
+    <a href="service/wallets.html" class="btn btn-primary">View</a>
+  </div>
+
+  <div class="card">
+    <img src="images/belt.webp" alt="Leather Work">
+    <h3>Custom Leather Work</h3>
+    <a href="service/leather.html" class="btn btn-primary">View</a>
+  </div>
+
+</section>
+
+<!-- ABOUT PREVIEW -->
+<section class="hero">
+  <h2>Our Craft</h2>
+  <p>
+    At Alpine Leather, we believe in quality over quantity. Every piece is handcrafted
+    using premium materials to ensure durability and timeless style.
+  </p>
+  <a href="about/portfolio.html" class="btn btn-secondary">View Portfolio</a>
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <p>© 2026 Monarch Leather Works</p>
+  <p>© 2026 Alpine Leather | Built with craftsmanship</p>
 </footer>
 
 </body>
