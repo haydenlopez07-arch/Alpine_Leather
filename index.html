@@ -6,7 +6,7 @@
   <title>Alpine Leather</title>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
@@ -23,45 +23,53 @@
 <nav class="navbar">
   <ul class="nav-links">
 
-    <li><a href="index.html">Home</a></li>
+    <li><a id="nav-home" href="index.html">Home</a></li>
 
     <li class="dropdown">
-      <a href="support/index.html">Support</a>
+      <a id="nav-support" href="support/index.html">Support</a>
+
       <ul class="dropdown-menu">
-        <li><a href="support/faqs.html">FAQs</a></li>
-        <li><a href="support/privacy.html">Privacy</a></li>
-        <li><a href="support/terms.html">Terms</a></li>
+        <li><a id="faq-link" href="support/faqs.html">FAQs</a></li>
+        <li><a id="privacy-link" href="support/privacy.html">Privacy</a></li>
+        <li><a id="terms-link" href="support/terms.html">Terms</a></li>
       </ul>
     </li>
 
     <li class="dropdown">
-      <a href="service/index.html">Service</a>
+      <a id="nav-service" href="service/index.html">Service</a>
+
       <ul class="dropdown-menu">
-        <li><a href="service/classes.html">Classes</a></li>
-        <li><a href="service/leather.html">Leather Work</a></li>
-        <li><a href="service/bags.html">Bags & Cases</a></li>
-        <li><a href="service/wallets.html">Wallets & Purses</a></li>
-        <li><a href="service/other.html">Other</a></li>
+        <li><a id="classes-link" href="service/classes.html">Classes</a></li>
+        <li><a id="leather-link" href="service/leather.html">Leather Work</a></li>
+        <li><a id="bags-link" href="service/bags.html">Bags & Cases</a></li>
+        <li><a id="wallets-link" href="service/wallets.html">Wallets & Purses</a></li>
+        <li><a id="other-link" href="service/other.html">Other</a></li>
       </ul>
     </li>
 
     <li class="dropdown">
-      <a href="about/index.html">About</a>
+      <a id="nav-about" href="about/index.html">About</a>
+
       <ul class="dropdown-menu">
-        <li><a href="about/contact.html">Contact Us</a></li>
-        <li><a href="about/portfolio.html">Portfolio</a></li>
-        <li><a href="about/updates.html">Farm Updates</a></li>
-        <li><a href="about/farm-products.html">Other Farm Products</a></li>
+        <li><a id="contact-link" href="about/contact.html">Contact Us</a></li>
+        <li><a id="portfolio-link" href="about/portfolio.html">Portfolio</a></li>
+        <li><a id="updates-link" href="about/updates.html">Farm Updates</a></li>
+        <li><a id="products-link" href="about/farm-products.html">Other Farm Products</a></li>
       </ul>
     </li>
 
     <li class="dropdown">
-      <a href="account/index.html">Account</a>
+      <a id="nav-account" href="account/index.html">Account</a>
+
       <ul class="dropdown-menu">
-        <li><a href="account/login.html">Log In</a></li>
-        <li><a href="account/signup.html">Sign Up</a></li>
-        <li><a href="account/profile.html">Profile</a></li>
+        <li><a id="login-link" href="account/login.html">Log In</a></li>
+        <li><a id="signup-link" href="account/signup.html">Sign Up</a></li>
+        <li><a id="profile-link" href="account/profile.html">Profile</a></li>
       </ul>
+    </li>
+
+    <li>
+      <button id="lang-toggle">日本語</button>
     </li>
 
   </ul>
@@ -69,10 +77,21 @@
 
 <!-- HERO SECTION -->
 <section class="hero">
-  <h2>Premium Handmade Leather</h2>
-  <p>Crafted with care. Designed for durability. Built for everyday life.</p>
-  <a href="service/leather.html" class="btn btn-primary">Explore Products</a>
-  <a href="about/contact.html" class="btn btn-secondary">Contact Us</a>
+
+  <h2 id="hero-title">Premium Handmade Leather</h2>
+
+  <p id="hero-text">
+    Crafted with care. Designed for durability. Built for everyday life.
+  </p>
+
+  <a id="explore-btn" href="service/leather.html" class="btn btn-primary">
+    Explore Products
+  </a>
+
+  <a id="contact-btn" href="about/contact.html" class="btn btn-secondary">
+    Contact Us
+  </a>
+
 </section>
 
 <!-- FEATURED CATEGORIES -->
@@ -80,37 +99,45 @@
 
   <div class="card">
     <img src="images/bag.webp" alt="Leather Bag">
-    <h3>Bags & Cases</h3>
-    <a href="service/bags.html" class="btn btn-primary">View</a>
+    <h3 id="bag-title">Bags & Cases</h3>
+    <a id="bag-view" href="service/bags.html" class="btn btn-primary">View</a>
   </div>
+
   <div class="card">
     <img src="images/wallet.webp" alt="Wallets">
-    <h3>Wallets & Purses</h3>
-    <a href="service/wallets.html" class="btn btn-primary">View</a>
+    <h3 id="wallet-title">Wallets & Purses</h3>
+    <a id="wallet-view" href="service/wallets.html" class="btn btn-primary">View</a>
   </div>
 
   <div class="card">
     <img src="images/belt.webp" alt="Leather belt">
-    <h3>Custom Leather belts</h3>
-    <a href="service/belts.html" class="btn btn-primary">View</a>
+    <h3 id="belt-title">Custom Leather Belts</h3>
+    <a id="belt-view" href="service/belts.html" class="btn btn-primary">View</a>
   </div>
 
 </section>
 
 <!-- ABOUT PREVIEW -->
 <section class="hero">
-  <h2>Our Craft</h2>
-  <p>
-    At Alpine Leather, we believe in quality over quantity. Every piece is handcrafted
-    using premium materials to ensure durability and timeless style.
+
+  <h2 id="craft-title">Our Craft</h2>
+
+  <p id="craft-text">
+    At Alpine Leather, we believe in quality over quantity.
+    Every piece is handcrafted using premium materials to ensure
+    durability and timeless style.
   </p>
-  <a href="about/portfolio.html" class="btn btn-secondary">View Portfolio</a>
+
+  <a id="portfolio-btn" href="about/portfolio.html" class="btn btn-secondary">
+    View Portfolio
+  </a>
+
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 Alpine Leather | Built with craftsmanship</p>
+  <p id="footer-text">© 2026 Alpine Leather | Built with craftsmanship</p>
 </footer>
-
+<script src="translations.js"></script>
 </body>
 </html>

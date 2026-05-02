@@ -1,52 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Services | Alpine Leather</title>
+
   <link rel="stylesheet" href="../styles.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
+<!-- HEADER -->
 <header>
-  <h1>Our Services</h1>
+  <img src="../images/Alpine_logo.png" alt="Alpine_logo" class="logo">
 </header>
 
-<main class="hero">
-  <h2>Explore Our Craft</h2>
-  <p>From custom work to handcrafted goods.</p>
-</main>
+<!-- NAVIGATION -->
+<nav class="navbar">
 
-<section class="grid">
-  <div class="card">
-    <h3>Classes</h3>
-    <a href="classes.html" class="btn btn-primary">View</a>
-  </div>
+  <ul class="nav-links">
 
-  <div class="card">
-    <h3>Leather Work</h3>
-    <a href="leather.html" class="btn btn-primary">View</a>
-  </div>
+    <li><a id="nav-home" href="../index.html">Home</a></li>
 
-  <div class="card">
-    <h3>Bags & Cases</h3>
-    <a href="bags.html" class="btn btn-primary">View</a>
-  </div>
+    <li class="dropdown">
 
-  <div class="card">
-    <h3>Wallets</h3>
-    <a href="wallets.html" class="btn btn-primary">View</a>
-  </div>
+      <a id="nav-support" href="../support/index.html">Support</a>
 
-  <div class="card">
-    <h3>Other</h3>
-    <a href="other.html" class="btn btn-primary">View</a>
-  </div>
+      <ul class="dropdown-menu">
+        <li><a id="faq-link" href="../support/faqs.html">FAQs</a></li>
+        <li><a id="privacy-link" href="../support/privacy.html">Privacy</a></li>
+        <li><a id="terms-link" href="../support/terms.html">Terms</a></li>
+      </ul>
+
+    </li>
+
+    <li class="dropdown">
+
+      <a id="nav-service" href="index.html">Service</a>
+
+      <ul class="dropdown-menu">
+        <li><a id="classes-link" href="classes.html">Classes</a></li>
+        <li><a id="leather-link" href="leather.html">Leather Work</a></li>
+        <li><a id="bags-link" href="bags.html">Bags & Cases</a></li>
+        <li><a id="wallets-link" href="wallets.html">Wallets & Purses</a></li>
+        <li><a id="other-link" href="other.html">Other</a></li>
+      </ul>
+
+    </li>
+
+    <li class="dropdown">
+
+      <a id="nav-about" href="../about/index.html">About</a>
+
+      <ul class="dropdown-menu">
+        <li><a id="contact-link" href="../about/contact.html">Contact Us</a></li>
+        <li><a id="portfolio-link" href="../about/portfolio.html">Portfolio</a></li>
+        <li><a id="updates-link" href="../about/updates.html">Farm Updates</a></li>
+        <li><a id="products-link" href="../about/farm-products.html">Other Farm Products</a></li>
+      </ul>
+
+    </li>
+
+    <li class="dropdown">
+
+      <a id="nav-account" href="../account/index.html">Account</a>
+
+      <ul class="dropdown-menu">
+        <li><a id="login-link" href="../account/login.html">Log In</a></li>
+        <li><a id="signup-link" href="../account/signup.html">Sign Up</a></li>
+        <li><a id="profile-link" href="../account/profile.html">Profile</a></li>
+      </ul>
+
+    </li>
+
+    <li>
+      <button id="lang-toggle">日本語</button>
+    </li>
+
+  </ul>
+
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+  <h2 id="services-title">Explore Our Craft</h2>
+
+  <p id="services-text">
+    From custom work to handcrafted goods.
+  </p>
+
 </section>
 
+<!-- SERVICES GRID -->
+<section class="grid">
+
+  <div class="card">
+
+    <h3 id="classes-card-title">Classes</h3>
+
+    <a
+      href="classes.html"
+      class="btn btn-primary"
+      id="classes-view"
+    >
+      View
+    </a>
+
+  </div>
+
+  <div class="card">
+
+    <h3 id="leather-card-title">Leather Work</h3>
+
+    <a
+      href="leather.html"
+      class="btn btn-primary"
+      id="leather-view"
+    >
+      View
+    </a>
+
+  </div>
+
+  <div class="card">
+
+    <h3 id="bags-card-title">Bags & Cases</h3>
+
+    <a
+      href="bags.html"
+      class="btn btn-primary"
+      id="bags-view"
+    >
+      View
+    </a>
+
+  </div>
+
+  <div class="card">
+
+    <h3 id="wallets-card-title">Wallets</h3>
+
+    <a
+      href="wallets.html"
+      class="btn btn-primary"
+      id="wallets-view"
+    >
+      View
+    </a>
+
+  </div>
+
+  <div class="card">
+
+    <h3 id="other-card-title">Other</h3>
+
+    <a
+      href="other.html"
+      class="btn btn-primary"
+      id="other-view"
+    >
+      View
+    </a>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <p>© Alpine Leather</p>
+  <p id="footer-text">© Alpine Leather</p>
 </footer>
+
+<!-- TRANSLATIONS -->
+<script src="../translations.js"></script>
+
+<script>
+
+function translateServicePage(language) {
+
+  const jp = language === "jp";
+
+  // HERO
+  document.getElementById("services-title").textContent =
+    jp ? "職人技を見る" : "Explore Our Craft";
+
+  document.getElementById("services-text").textContent =
+    jp
+    ? "カスタム作品からハンドメイド商品まで。"
+    : "From custom work to handcrafted goods.";
+
+  // CARDS
+  document.getElementById("classes-card-title").textContent =
+    jp ? "クラス" : "Classes";
+
+  document.getElementById("leather-card-title").textContent =
+    jp ? "レザーワーク" : "Leather Work";
+
+  document.getElementById("bags-card-title").textContent =
+    jp ? "バッグ＆ケース" : "Bags & Cases";
+
+  document.getElementById("wallets-card-title").textContent =
+    jp ? "財布＆小物" : "Wallets";
+
+  document.getElementById("other-card-title").textContent =
+    jp ? "その他" : "Other";
+
+  // BUTTONS
+  document.getElementById("classes-view").textContent =
+    jp ? "表示" : "View";
+
+  document.getElementById("leather-view").textContent =
+    jp ? "表示" : "View";
+
+  document.getElementById("bags-view").textContent =
+    jp ? "表示" : "View";
+
+  document.getElementById("wallets-view").textContent =
+    jp ? "表示" : "View";
+
+  document.getElementById("other-view").textContent =
+    jp ? "表示" : "View";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const currentLanguage =
+    localStorage.getItem("language") || "en";
+
+  translateServicePage(currentLanguage);
+
+  const originalSetLanguage = setLanguage;
+
+  setLanguage = function(language) {
+
+    originalSetLanguage(language);
+
+    translateServicePage(language);
+  };
+});
+
+</script>
 
 </body>
 </html>

@@ -1,42 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Support | Alpine Leather</title>
+
   <link rel="stylesheet" href="../styles.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
+<!-- HEADER -->
 <header>
-  <h1>Support</h1>
+  <img src="../images/Alpine_logo.png" alt="Alpine_logo" class="logo">
 </header>
 
-<main class="hero">
-  <h2>How Can We Help?</h2>
-  <p>Find answers, policies, and support resources.</p>
-</main>
+<!-- NAVIGATION -->
+<nav class="navbar">
 
-<section class="grid">
-  <div class="card">
-    <h3>FAQs</h3>
-    <a href="faqs.html" class="btn btn-primary">View</a>
-  </div>
+  <ul class="nav-links">
 
-  <div class="card">
-    <h3>Privacy Policy</h3>
-    <a href="privacy.html" class="btn btn-primary">View</a>
-  </div>
+    <li><a id="nav-home" href="../index.html">Home</a></li>
 
-  <div class="card">
-    <h3>Terms & Conditions</h3>
-    <a href="terms.html" class="btn btn-primary">View</a>
-  </div>
+    <li class="dropdown">
+
+      <a id="nav-support" href="index.html">Support</a>
+
+      <ul class="dropdown-menu">
+        <li><a id="faq-link" href="faqs.html">FAQs</a></li>
+        <li><a id="privacy-link" href="privacy.html">Privacy</a></li>
+        <li><a id="terms-link" href="terms.html">Terms</a></li>
+      </ul>
+
+    </li>
+
+    <li class="dropdown">
+
+      <a id="nav-service" href="../service/index.html">Service</a>
+
+      <ul class="dropdown-menu">
+        <li><a id="classes-link" href="../service/classes.html">Classes</a></li>
+        <li><a id="leather-link" href="../service/leather.html">Leather Work</a></li>
+        <li><a id="bags-link" href="../service/bags.html">Bags & Cases</a></li>
+        <li><a id="wallets-link" href="../service/wallets.html">Wallets & Purses</a></li>
+        <li><a id="other-link" href="../service/other.html">Other</a></li>
+      </ul>
+
+    </li>
+
+    <li class="dropdown">
+
+      <a id="nav-about" href="../about/index.html">About</a>
+
+      <ul class="dropdown-menu">
+        <li><a id="contact-link" href="../about/contact.html">Contact Us</a></li>
+        <li><a id="portfolio-link" href="../about/portfolio.html">Portfolio</a></li>
+        <li><a id="updates-link" href="../about/updates.html">Farm Updates</a></li>
+        <li><a id="products-link" href="../about/farm-products.html">Other Farm Products</a></li>
+      </ul>
+
+    </li>
+
+    <li class="dropdown">
+
+      <a id="nav-account" href="../account/index.html">Account</a>
+
+      <ul class="dropdown-menu">
+        <li><a id="login-link" href="../account/login.html">Log In</a></li>
+        <li><a id="signup-link" href="../account/signup.html">Sign Up</a></li>
+        <li><a id="profile-link" href="../account/profile.html">Profile</a></li>
+      </ul>
+
+    </li>
+
+    <li>
+      <button id="lang-toggle">日本語</button>
+    </li>
+
+  </ul>
+
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+  <h2 id="support-title">How Can We Help?</h2>
+
+  <p id="support-text">
+    Find answers, policies, and support resources.
+  </p>
+
 </section>
 
+<!-- SUPPORT GRID -->
+<section class="grid">
+
+  <div class="card">
+
+    <h3 id="faq-card-title">FAQs</h3>
+
+    <a
+      href="faqs.html"
+      class="btn btn-primary"
+      id="faq-view"
+    >
+      View
+    </a>
+
+  </div>
+
+  <div class="card">
+
+    <h3 id="privacy-card-title">Privacy Policy</h3>
+
+    <a
+      href="privacy.html"
+      class="btn btn-primary"
+      id="privacy-view"
+    >
+      View
+    </a>
+
+  </div>
+
+  <div class="card">
+
+    <h3 id="terms-card-title">Terms & Conditions</h3>
+
+    <a
+      href="terms.html"
+      class="btn btn-primary"
+      id="terms-view"
+    >
+      View
+    </a>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <p>© Alpine Leather</p>
+  <p id="footer-text">© Alpine Leather</p>
 </footer>
+
+<!-- TRANSLATIONS -->
+<script src="../translations.js"></script>
+
+<script>
+
+function translateSupportPage(language) {
+
+  const jp = language === "jp";
+
+  // HERO
+  document.getElementById("support-title").textContent =
+    jp ? "どのようにお手伝いできますか？" : "How Can We Help?";
+
+  document.getElementById("support-text").textContent =
+    jp
+    ? "回答、ポリシー、サポート情報をご確認ください。"
+    : "Find answers, policies, and support resources.";
+
+  // CARDS
+  document.getElementById("faq-card-title").textContent =
+    jp ? "よくある質問" : "FAQs";
+
+  document.getElementById("privacy-card-title").textContent =
+    jp ? "プライバシーポリシー" : "Privacy Policy";
+
+  document.getElementById("terms-card-title").textContent =
+    jp ? "利用規約" : "Terms & Conditions";
+
+  // BUTTONS
+  document.getElementById("faq-view").textContent =
+    jp ? "表示" : "View";
+
+  document.getElementById("privacy-view").textContent =
+    jp ? "表示" : "View";
+
+  document.getElementById("terms-view").textContent =
+    jp ? "表示" : "View";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const currentLanguage =
+    localStorage.getItem("language") || "en";
+
+  translateSupportPage(currentLanguage);
+
+  const originalSetLanguage = setLanguage;
+
+  setLanguage = function(language) {
+
+    originalSetLanguage(language);
+
+    translateSupportPage(language);
+  };
+});
+
+</script>
 
 </body>
 </html>

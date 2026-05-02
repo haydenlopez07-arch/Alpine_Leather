@@ -1,42 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Account | Alpine Leather</title>
+
   <link rel="stylesheet" href="../styles.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
+<!-- HEADER -->
 <header>
-  <h1>Account</h1>
+  <img src="../images/Alpine_logo.png" alt="Alpine_logo" class="logo">
 </header>
 
-<main class="hero">
-  <h2>Manage Your Account</h2>
-  <p>Access your profile, orders, and settings.</p>
-</main>
+<!-- NAVIGATION -->
+<nav class="navbar">
 
-<section class="grid">
-  <div class="card">
-    <h3>Log In</h3>
-    <a href="login.html" class="btn btn-primary">Go</a>
-  </div>
+  <ul class="nav-links">
 
-  <div class="card">
-    <h3>Sign Up</h3>
-    <a href="signup.html" class="btn btn-primary">Go</a>
-  </div>
+    <li><a id="nav-home" href="../index.html">Home</a></li>
 
-  <div class="card">
-    <h3>Profile</h3>
-    <a href="profile.html" class="btn btn-primary">View</a>
-  </div>
+    <li class="dropdown">
+
+      <a id="nav-support" href="../support/index.html">Support</a>
+
+      <ul class="dropdown-menu">
+        <li><a id="faq-link" href="../support/faqs.html">FAQs</a></li>
+        <li><a id="privacy-link" href="../support/privacy.html">Privacy</a></li>
+        <li><a id="terms-link" href="../support/terms.html">Terms</a></li>
+      </ul>
+
+    </li>
+
+    <li class="dropdown">
+
+      <a id="nav-service" href="../service/index.html">Service</a>
+
+      <ul class="dropdown-menu">
+        <li><a id="classes-link" href="../service/classes.html">Classes</a></li>
+        <li><a id="leather-link" href="../service/leather.html">Leather Work</a></li>
+        <li><a id="bags-link" href="../service/bags.html">Bags & Cases</a></li>
+        <li><a id="wallets-link" href="../service/wallets.html">Wallets & Purses</a></li>
+        <li><a id="other-link" href="../service/other.html">Other</a></li>
+      </ul>
+
+    </li>
+
+    <li class="dropdown">
+
+      <a id="nav-about" href="../about/index.html">About</a>
+
+      <ul class="dropdown-menu">
+        <li><a id="contact-link" href="../about/contact.html">Contact Us</a></li>
+        <li><a id="portfolio-link" href="../about/portfolio.html">Portfolio</a></li>
+        <li><a id="updates-link" href="../about/updates.html">Farm Updates</a></li>
+        <li><a id="products-link" href="../about/farm-products.html">Other Farm Products</a></li>
+      </ul>
+
+    </li>
+
+    <li class="dropdown">
+
+      <a id="nav-account" href="index.html">Account</a>
+
+      <ul class="dropdown-menu">
+        <li><a id="login-link" href="login.html">Log In</a></li>
+        <li><a id="signup-link" href="signup.html">Sign Up</a></li>
+        <li><a id="profile-link" href="profile.html">Profile</a></li>
+      </ul>
+
+    </li>
+
+    <li>
+      <button id="lang-toggle">日本語</button>
+    </li>
+
+  </ul>
+
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+  <h2 id="account-title">Manage Your Account</h2>
+
+  <p id="account-text">
+    Access your profile, orders, and settings.
+  </p>
+
 </section>
 
+<!-- ACCOUNT OPTIONS -->
+<section class="grid">
+
+  <div class="card">
+    <h3 id="login-card-title">Log In</h3>
+    <a href="login.html" class="btn btn-primary" id="login-btn">Go</a>
+  </div>
+
+  <div class="card">
+    <h3 id="signup-card-title">Sign Up</h3>
+    <a href="signup.html" class="btn btn-primary" id="signup-btn">Go</a>
+  </div>
+
+  <div class="card">
+    <h3 id="profile-card-title">Profile</h3>
+    <a href="profile.html" class="btn btn-primary" id="profile-btn">View</a>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <p>© Alpine Leather</p>
+  <p id="footer-text">© Alpine Leather</p>
 </footer>
+
+<script src="../translations.js"></script>
+
+<script>
+
+function translateAccountPage(language) {
+
+  const jp = language === "jp";
+
+  document.getElementById("account-title").textContent =
+    jp ? "アカウント管理" : "Manage Your Account";
+
+  document.getElementById("account-text").textContent =
+    jp
+    ? "プロフィール、注文、設定にアクセスできます。"
+    : "Access your profile, orders, and settings.";
+
+  document.getElementById("login-card-title").textContent =
+    jp ? "ログイン" : "Log In";
+
+  document.getElementById("signup-card-title").textContent =
+    jp ? "新規登録" : "Sign Up";
+
+  document.getElementById("profile-card-title").textContent =
+    jp ? "プロフィール" : "Profile";
+
+  document.getElementById("login-btn").textContent =
+    jp ? "表示" : "Go";
+
+  document.getElementById("signup-btn").textContent =
+    jp ? "表示" : "Go";
+
+  document.getElementById("profile-btn").textContent =
+    jp ? "表示" : "View";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const currentLanguage =
+    localStorage.getItem("language") || "en";
+
+  translateAccountPage(currentLanguage);
+
+  const originalSetLanguage = setLanguage;
+
+  setLanguage = function(language) {
+
+    originalSetLanguage(language);
+
+    translateAccountPage(language);
+  };
+});
+
+</script>
 
 </body>
 </html>

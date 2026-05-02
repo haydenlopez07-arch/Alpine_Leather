@@ -1,70 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Sign Up | Alpine Leather</title>
+
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="../forms.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
+<!-- HEADER -->
 <header>
-  <h1>Alpine Leather</h1>
+  <img src="../images/Alpine_logo.png" alt="Alpine_logo" class="logo">
 </header>
 
+<!-- NAVIGATION -->
+<nav class="navbar">
+
+  <ul class="nav-links">
+
+    <li><a id="nav-home" href="../index.html">Home</a></li>
+
+    <li class="dropdown">
+
+      <a id="nav-support" href="../support/index.html">Support</a>
+
+      <ul class="dropdown-menu">
+        <li><a id="faq-link" href="../support/faqs.html">FAQs</a></li>
+        <li><a id="privacy-link" href="../support/privacy.html">Privacy</a></li>
+        <li><a id="terms-link" href="../support/terms.html">Terms</a></li>
+      </ul>
+
+    </li>
+
+    <li class="dropdown">
+
+      <a id="nav-service" href="../service/index.html">Service</a>
+
+      <ul class="dropdown-menu">
+        <li><a id="classes-link" href="../service/classes.html">Classes</a></li>
+        <li><a id="leather-link" href="../service/leather.html">Leather Work</a></li>
+        <li><a id="bags-link" href="../service/bags.html">Bags & Cases</a></li>
+        <li><a id="wallets-link" href="../service/wallets.html">Wallets & Purses</a></li>
+        <li><a id="other-link" href="../service/other.html">Other</a></li>
+      </ul>
+
+    </li>
+
+    <li class="dropdown">
+
+      <a id="nav-about" href="../about/index.html">About</a>
+
+      <ul class="dropdown-menu">
+        <li><a id="contact-link" href="../about/contact.html">Contact Us</a></li>
+        <li><a id="portfolio-link" href="../about/portfolio.html">Portfolio</a></li>
+        <li><a id="updates-link" href="../about/updates.html">Farm Updates</a></li>
+        <li><a id="products-link" href="../about/farm-products.html">Other Farm Products</a></li>
+      </ul>
+
+    </li>
+
+    <li class="dropdown">
+
+      <a id="nav-account" href="index.html">Account</a>
+
+      <ul class="dropdown-menu">
+        <li><a id="login-link" href="login.html">Log In</a></li>
+        <li><a id="signup-link" href="signup.html">Sign Up</a></li>
+        <li><a id="profile-link" href="profile.html">Profile</a></li>
+      </ul>
+
+    </li>
+
+    <li>
+      <button id="lang-toggle">日本語</button>
+    </li>
+
+  </ul>
+
+</nav>
+
+<!-- HERO -->
 <main class="hero">
-  <h2>Create Your Account</h2>
-  <p>Join us to access orders, profiles, and exclusive products.</p>
+
+  <h2 id="signup-title">Create Your Account</h2>
+
+  <p id="signup-text">
+    Join us to access orders, profiles, and exclusive products.
+  </p>
 
   <form id="signupForm" class="form-container">
-    
+
     <div class="form-row">
-      <input type="text" id="firstName" placeholder="First Name" required>
-      <input type="text" id="lastName" placeholder="Last Name" required>
+
+      <input
+        type="text"
+        id="firstName"
+        placeholder="First Name"
+        required
+      >
+
+      <input
+        type="text"
+        id="lastName"
+        placeholder="Last Name"
+        required
+      >
+
     </div>
 
-    <input type="email" id="email" placeholder="Email Address" required>
-    <input type="password" id="password" placeholder="Password" required>
+    <input
+      type="email"
+      id="email"
+      placeholder="Email Address"
+      required
+    >
 
-    <button type="submit" class="btn btn-primary">Sign Up</button>
+    <input
+      type="password"
+      id="password"
+      placeholder="Password"
+      required
+    >
+
+    <button
+      type="submit"
+      class="btn btn-primary"
+      id="signup-submit"
+    >
+      Sign Up
+    </button>
+
   </form>
 
   <p id="message"></p>
+
 </main>
 
+<!-- FOOTER -->
 <footer>
-  <p>© Alpine Leather</p>
+  <p id="footer-text">© Alpine Leather</p>
 </footer>
 
+<script src="../translations.js"></script>
+
 <script>
-document.getElementById("signupForm").addEventListener("submit", function(e) {
+
+function translateSignupPage(language) {
+
+  const jp = language === "jp";
+
+  document.getElementById("signup-title").textContent =
+    jp ? "アカウント作成" : "Create Your Account";
+
+  document.getElementById("signup-text").textContent =
+    jp
+    ? "注文、プロフィール、限定商品にアクセスできます。"
+    : "Join us to access orders, profiles, and exclusive products.";
+
+  document.getElementById("firstName").placeholder =
+    jp ? "名" : "First Name";
+
+  document.getElementById("lastName").placeholder =
+    jp ? "姓" : "Last Name";
+
+  document.getElementById("email").placeholder =
+    jp ? "メールアドレス" : "Email Address";
+
+  document.getElementById("password").placeholder =
+    jp ? "パスワード" : "Password";
+
+  document.getElementById("signup-submit").textContent =
+    jp ? "新規登録" : "Sign Up";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const currentLanguage =
+    localStorage.getItem("language") || "en";
+
+  translateSignupPage(currentLanguage);
+
+  const originalSetLanguage = setLanguage;
+
+  setLanguage = function(language) {
+
+    originalSetLanguage(language);
+
+    translateSignupPage(language);
+  };
+});
+
+document.getElementById("signupForm")
+.addEventListener("submit", function(e) {
+
   e.preventDefault();
 
-  const firstName = document.getElementById("firstName").value;
-  const lastName = document.getElementById("lastName").value;
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-
-  // Create user object
   const user = {
-    firstName,
-    lastName,
-    email,
-    password
+
+    firstName:
+      document.getElementById("firstName").value,
+
+    lastName:
+      document.getElementById("lastName").value,
+
+    email:
+      document.getElementById("email").value,
+
+    password:
+      document.getElementById("password").value
   };
 
-  // Save to localStorage
-  localStorage.setItem("user", JSON.stringify(user));
+  localStorage.setItem(
+    "user",
+    JSON.stringify(user)
+  );
 
-  // Feedback
-  document.getElementById("message").textContent = "Account created successfully!";
+  const jp =
+    localStorage.getItem("language") === "jp";
 
-  // Optional redirect after 2 sec
+  document.getElementById("message").textContent =
+    jp
+    ? "アカウントが作成されました。"
+    : "Account created successfully!";
+
   setTimeout(() => {
+
     window.location.href = "profile.html";
+
   }, 2000);
 });
+
 </script>
 
 </body>

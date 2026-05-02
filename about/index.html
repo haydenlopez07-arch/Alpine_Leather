@@ -1,47 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>About | Alpine Leather</title>
+
   <link rel="stylesheet" href="../styles.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
+<!-- HEADER -->
 <header>
-  <h1>About Us</h1>
+  <img src="../images/Alpine_logo.png" alt="Alpine_logo" class="logo">
 </header>
 
-<main class="hero">
-  <h2>Our Story</h2>
-  <p>Craftsmanship, tradition, and quality.</p>
-</main>
+<!-- NAVIGATION -->
+<nav class="navbar">
 
-<section class="grid">
-  <div class="card">
-    <h3>Contact Us</h3>
-    <a href="contact.html" class="btn btn-primary">View</a>
-  </div>
+  <ul class="nav-links">
 
-  <div class="card">
-    <h3>Portfolio</h3>
-    <a href="portfolio.html" class="btn btn-primary">View</a>
-  </div>
+    <li><a id="nav-home" href="../index.html">Home</a></li>
 
-  <div class="card">
-    <h3>Farm Updates</h3>
-    <a href="updates.html" class="btn btn-primary">View</a>
-  </div>
+    <li class="dropdown">
 
-  <div class="card">
-    <h3>Other Products</h3>
-    <a href="farm-products.html" class="btn btn-primary">View</a>
-  </div>
+      <a id="nav-support" href="../support/index.html">Support</a>
+
+      <ul class="dropdown-menu">
+        <li><a id="faq-link" href="../support/faqs.html">FAQs</a></li>
+        <li><a id="privacy-link" href="../support/privacy.html">Privacy</a></li>
+        <li><a id="terms-link" href="../support/terms.html">Terms</a></li>
+      </ul>
+
+    </li>
+
+    <li class="dropdown">
+
+      <a id="nav-service" href="../service/index.html">Service</a>
+
+      <ul class="dropdown-menu">
+        <li><a id="classes-link" href="../service/classes.html">Classes</a></li>
+        <li><a id="leather-link" href="../service/leather.html">Leather Work</a></li>
+        <li><a id="bags-link" href="../service/bags.html">Bags & Cases</a></li>
+        <li><a id="wallets-link" href="../service/wallets.html">Wallets & Purses</a></li>
+        <li><a id="other-link" href="../service/other.html">Other</a></li>
+      </ul>
+
+    </li>
+
+    <li class="dropdown">
+
+      <a id="nav-about" href="index.html">About</a>
+
+      <ul class="dropdown-menu">
+        <li><a id="contact-link" href="contact.html">Contact Us</a></li>
+        <li><a id="portfolio-link" href="portfolio.html">Portfolio</a></li>
+        <li><a id="updates-link" href="updates.html">Farm Updates</a></li>
+        <li><a id="products-link" href="farm-products.html">Other Farm Products</a></li>
+      </ul>
+
+    </li>
+
+    <li class="dropdown">
+
+      <a id="nav-account" href="../account/index.html">Account</a>
+
+      <ul class="dropdown-menu">
+        <li><a id="login-link" href="../account/login.html">Log In</a></li>
+        <li><a id="signup-link" href="../account/signup.html">Sign Up</a></li>
+        <li><a id="profile-link" href="../account/profile.html">Profile</a></li>
+      </ul>
+
+    </li>
+
+    <li>
+      <button id="lang-toggle">日本語</button>
+    </li>
+
+  </ul>
+
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+  <h2 id="about-title">Our Story</h2>
+
+  <p id="about-text">
+    Craftsmanship, tradition, and quality.
+  </p>
+
 </section>
 
+<!-- ABOUT OPTIONS -->
+<section class="grid">
+
+  <div class="card">
+
+    <h3 id="contact-card-title">Contact Us</h3>
+
+    <a
+      href="contact.html"
+      class="btn btn-primary"
+      id="contact-view"
+    >
+      View
+    </a>
+
+  </div>
+
+  <div class="card">
+
+    <h3 id="portfolio-card-title">Portfolio</h3>
+
+    <a
+      href="portfolio.html"
+      class="btn btn-primary"
+      id="portfolio-view"
+    >
+      View
+    </a>
+
+  </div>
+
+  <div class="card">
+
+    <h3 id="updates-card-title">Farm Updates</h3>
+
+    <a
+      href="updates.html"
+      class="btn btn-primary"
+      id="updates-view"
+    >
+      View
+    </a>
+
+  </div>
+
+  <div class="card">
+
+    <h3 id="products-card-title">Other Products</h3>
+
+    <a
+      href="farm-products.html"
+      class="btn btn-primary"
+      id="products-view"
+    >
+      View
+    </a>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <p>© Alpine Leather</p>
+  <p id="footer-text">© Alpine Leather</p>
 </footer>
+
+<!-- TRANSLATIONS -->
+<script src="../translations.js"></script>
+
+<script>
+
+function translateAboutPage(language) {
+
+  const jp = language === "jp";
+
+  // HERO
+  document.getElementById("about-title").textContent =
+    jp ? "私たちの物語" : "Our Story";
+
+  document.getElementById("about-text").textContent =
+    jp
+    ? "職人技、伝統、そして品質を大切にしています。"
+    : "Craftsmanship, tradition, and quality.";
+
+  // CARDS
+  document.getElementById("contact-card-title").textContent =
+    jp ? "お問い合わせ" : "Contact Us";
+
+  document.getElementById("portfolio-card-title").textContent =
+    jp ? "作品集" : "Portfolio";
+
+  document.getElementById("updates-card-title").textContent =
+    jp ? "農場ニュース" : "Farm Updates";
+
+  document.getElementById("products-card-title").textContent =
+    jp ? "その他の商品" : "Other Products";
+
+  // BUTTONS
+  document.getElementById("contact-view").textContent =
+    jp ? "表示" : "View";
+
+  document.getElementById("portfolio-view").textContent =
+    jp ? "表示" : "View";
+
+  document.getElementById("updates-view").textContent =
+    jp ? "表示" : "View";
+
+  document.getElementById("products-view").textContent =
+    jp ? "表示" : "View";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const currentLanguage =
+    localStorage.getItem("language") || "en";
+
+  translateAboutPage(currentLanguage);
+
+  const originalSetLanguage = setLanguage;
+
+  setLanguage = function(language) {
+
+    originalSetLanguage(language);
+
+    translateAboutPage(language);
+  };
+});
+
+</script>
 
 </body>
 </html>
